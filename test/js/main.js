@@ -1,29 +1,113 @@
 //new array
+const myArray = [
+  {
+    name: "Rick Sanchez",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Male"
+  },
+
+  {
+    name: "Morty Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Male"
+  }, 
+  {
+    name: "Summer Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Female"
+  },
+  {
+    name: "Beth Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Female"
+  },
+  {
+    name: "Jerry Smith",
+    status: "Alive",
+    species: "Human",
+    type: "",
+    gender: "Male"
+  },
+  {
+    name: "Abadango Cluster Princess",
+    status: "Alive",
+    species: "Alien",
+    type: "",
+    gender: "Female"
+  },
+  {
+    name: "Abradolf Lincler",
+    status: "unknown",
+    species: "Human",
+    type: "Genetic experiment",
+    gender: "Male"
+  },
+  {
+    name: "Adjudicator Rick",
+    status: "Dead",
+    species: "Human",
+    type: "",
+    gender: "Male"
+  },
+{  
+    name: "Agency Director",
+    status: "Dead",
+    species: "Human",
+    type: "",
+    gender: "Male"
+},
+{    
+    name: "Alan Rails",
+    status: "Dead",
+    species: "Human",
+    type: "Superhuman (Ghost trains summoner)",
+    gender: "Male"
+}  
+  ]
 
 
 //Get the first three elements of the Array without altering the original Array
 getFirtsThreeElements=()=>{
-    //...write your code here
+    const slicedArray = myArray.slice(0, 3);
 
-    console.log('The first three',/** here your new answer*/)
+    console.log('The first three', slicedArray)
 }
+getFirtsThreeElements()
+
 //Find all the characters whose species is Aliens nad return in new array
 getAliens=()=>{
-    //...write your code here
-    console.log('the alien is:',/** here your new answer*/)
+    const answer = myArray.find(alien => alien.species==='Alien')
+    console.log('the alien is:',answer)
 }
+getAliens()
+
 //create a new character and add it to the matrix and add consecutive identifiers (1,2, ... n) to all characters
 newCharacter=()=>{
-    //...write your code here
-
-    console.log('New Charanter and id to all:',/** here your new answer*/)
+    myArray.forEach((n, i) => n.id = i+1)
+    console.log('New Charanter and id to all:',myArray)
 }
+newCharacter()
+
 //find the family smith (Morty, Beth, Summer, Jerry, Rick)  in a new Array called familySmith
 getFamilySmith=()=>{
     //...write your code here
+   const smiths = myArray.filter(a=>a.name.includes("Smith"))
+  
+   const burp = myArray.filter(b=>b.name.includes("Sanchez"))
 
-    console.log('Family Smith:',/** here your new answer*/)
+   const result = smiths.concat(burp);
+
+    console.log('Family Smith:',result)
 }
+getFamilySmith()
 //Jerry and Beth have divorced, remove Jerry from the Array Smith Family, and get a random family member and print all their values
 familyBroken=()=>{
     //...write your code here
